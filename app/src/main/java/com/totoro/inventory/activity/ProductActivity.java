@@ -56,6 +56,7 @@ public class ProductActivity extends AppCompatActivity implements android.app.Lo
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 Intent intent = new Intent(ProductActivity.this, ParticularActivity.class);
+//                Log.d("TAG", String.valueOf(id));
                 Uri currentPeturi = ContentUris.withAppendedId(ProductContract.ProductEntry.CONTENT_URI, id);
                 intent.setData(currentPeturi);
                 startActivity(intent);

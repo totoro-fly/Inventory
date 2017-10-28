@@ -47,6 +47,7 @@ public class ProductProvider extends ContentProvider {
                 selection = ProductContract.ProductEntry._ID + "=?";
                 selectionArgs = new String[]{String.valueOf(ContentUris.parseId(uri))};
                 cursor = db.query(ProductContract.ProductEntry.TABLE_NAME, projection, selection, selectionArgs, null, null, sortOrder);
+//                Log.d("TAG", String.valueOf(uri));
                 break;
             default:
                 throw new IllegalArgumentException("Cannot query unknown URI " + uri);

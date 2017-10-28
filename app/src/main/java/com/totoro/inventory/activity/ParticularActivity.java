@@ -74,6 +74,7 @@ public class ParticularActivity extends AppCompatActivity implements LoaderManag
         etAmount.setOnTouchListener(touchListener);
         etPrice.setOnTouchListener(touchListener);
         etSale.setOnTouchListener(touchListener);
+//        Log.d("tag", String.valueOf(currentUri));
     }
 
     @Override
@@ -233,7 +234,7 @@ public class ParticularActivity extends AppCompatActivity implements LoaderManag
         };
         return new android.content.CursorLoader(
                 this,
-                ProductContract.ProductEntry.CONTENT_URI,
+                currentUri,
                 projection,
                 null,
                 null,
