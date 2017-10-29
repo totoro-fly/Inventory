@@ -16,7 +16,6 @@ public class ProductDbHelper extends SQLiteOpenHelper {
         super(context, DATABASE_NAME, null, DATABASE_VERSION);
     }
 
-    
 
     @Override
     public void onCreate(SQLiteDatabase db) {
@@ -25,7 +24,8 @@ public class ProductDbHelper extends SQLiteOpenHelper {
                 + ProductContract.ProductEntry.COLUMN_PRODUCT_NAME + " TEXT NOT NULL,"
                 + ProductContract.ProductEntry.COLUMN_PRODUCT_AMOUNT + " INTEGER NOT NULL DEFAULT 0,"
                 + ProductContract.ProductEntry.COLUME_PRODUCT_PRICE + " DOUBLE NOT NULL DEFAULT 0,"
-                + ProductContract.ProductEntry.COLUMN_PRODUCT_SALE + " INTEGER NOT NULL DEFAULT 0);";
+                + ProductContract.ProductEntry.COLUMN_PRODUCT_SALE + " INTEGER NOT NULL DEFAULT 0,"
+                + ProductContract.ProductEntry.COLUMN_PRODUCT_IMAGE + " BLOB );";
         db.execSQL(SQL_CREATE_PET_TABLE);
     }
 

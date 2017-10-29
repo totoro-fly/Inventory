@@ -1,3 +1,27 @@
 <resources>
     <string name="app_name">Inventory</string>
+    <string name="null_query">未找到查询uri</string>
+    <string name="null_insert">未找到插入uri</string>
+    <string name="write_name">请填写名称</string>
+    <string name="null_delete">未找到删除uri</string>
+    <string name="null_update">未找到更新uri</string>
+    <string name="write_amount">请填写数量</string>
+    <string name="write_price">请填写价格</string>
+    <string name="write_sale">请填写销量</string>
+    <string name="amount_zero">库存数为零</string>
+    <string name="delete">删除</string>
+    <string name="row_product">行货物</string>
+    <string name="add_product">添加货物</string>
+    <string name="edit_product">编辑货物</string>
+    <string name="show_message_save">您要保存修改吗？</string>
+    <string name="save">保存</string>
+    <string name="gave_up">放弃</string>
+    <string name="delete_product">删除货物</string>
+    <string name="delete_failure">删除失败</string>
+    <string name="delete_succeed">删除成功</string>
+    <string name="insert_failure">添加失败</string>
+    <string name="insert_succeed">添加成功</string>
+    <string name="nothing_update">无更新</string>
+    <string name="update_succeed">更新成功</string>
+    <string name="nothing"/>
 </resources>

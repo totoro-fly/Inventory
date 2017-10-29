@@ -56,13 +56,13 @@ public class ProductActivity extends AppCompatActivity implements android.app.Lo
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 Intent intent = new Intent(ProductActivity.this, ParticularActivity.class);
-//                Log.d("TAG", String.valueOf(id));
-                Uri currentPeturi = ContentUris.withAppendedId(ProductContract.ProductEntry.CONTENT_URI, id);
+                final Uri currentPeturi = ContentUris.withAppendedId(ProductContract.ProductEntry.CONTENT_URI, id);
                 intent.setData(currentPeturi);
                 startActivity(intent);
             }
         });
         getLoaderManager().initLoader(PRODUCT_LOADER, null, this);
+
     }
 
     @OnClick(R.id.fb_add_product)
@@ -84,13 +84,15 @@ public class ProductActivity extends AppCompatActivity implements android.app.Lo
             case R.id.delete_all_data:
                 deleteAllProdut();
                 return true;
+            default:
+                break;
         }
         return super.onOptionsItemSelected(item);
     }
 
     private void deleteAllProdut() {
         int rowsDelete = getContentResolver().delete(ProductContract.ProductEntry.CONTENT_URI, null, null);
-        Toast.makeText(this, "删除 " + rowsDelete + " 行货物", Toast.LENGTH_LONG).show();
+        Toast.makeText(this, getString(R.string.delete) + rowsDelete + getString(R.string.row_product), Toast.LENGTH_LONG).show();
 
     }
 

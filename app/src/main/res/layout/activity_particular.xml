@@ -108,5 +108,47 @@
         app:layout_constraintRight_toRightOf="parent"
         tools:text="1"/>
 
+    <ImageView
+        android:id="@+id/bt_subtract"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="8dp"
+        android:alpha="0.7"
+        android:background="#03A9F3"
+        android:src="@drawable/ic_exposure_neg_1_white_36dp"
+        app:layout_constraintBottom_toBottomOf="@+id/et_sale"
+        app:layout_constraintLeft_toLeftOf="@+id/et_sale"
+        app:layout_constraintTop_toTopOf="@+id/et_sale"/>
+
+    <ImageView
+        android:id="@+id/bt_add"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginTop="8dp"
+        android:alpha="0.7"
+        android:background="#03A9F3"
+        android:src="@drawable/ic_exposure_plus_1_white_36dp"
+        app:layout_constraintBottom_toBottomOf="@+id/et_sale"
+        app:layout_constraintRight_toRightOf="@+id/et_sale"
+        app:layout_constraintTop_toTopOf="@+id/et_sale"/>
+
+    <ImageView
+        android:id="@+id/iv_add"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginTop="16dp"
+        android:src="@drawable/ic_add_shopping_cart_black_48dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/et_sale"/>
+
 
 </android.support.constraint.ConstraintLayout>

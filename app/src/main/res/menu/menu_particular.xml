@@ -4,7 +4,7 @@
     <item
         android:id="@+id/save_data"
         android:title="保存货物"
-        app:showAsAction="never"
+        app:showAsAction="always"
         >
     </item>
 
