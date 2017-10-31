@@ -29,7 +29,6 @@ import com.totoro.inventory.data.ProductContract;
 
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
-import java.text.DecimalFormat;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
@@ -92,6 +91,7 @@ public class ParticularActivity extends AppCompatActivity implements LoaderManag
         etPrice.setOnTouchListener(touchListener);
         etSale.setOnTouchListener(touchListener);
         ivAdd.setOnTouchListener(touchListener);
+
     }
 
     @Override
@@ -291,13 +291,12 @@ public class ParticularActivity extends AppCompatActivity implements LoaderManag
             String name = data.getString(nameIndex);
             Integer amount = data.getInt(amountIndex);
             Double price = data.getDouble(priceIndex);
-            DecimalFormat decimalFormat = new DecimalFormat("0.00");
             Integer sale = data.getInt(saleIndex);
             byte[] image = data.getBlob(imageIndex);
             ByteArrayInputStream stream = new ByteArrayInputStream(image);
             etName.setText(name + "");
             etAmount.setText(amount + "");
-            etPrice.setText(decimalFormat.format(price) + "");
+            etPrice.setText(String.format("%.2f", price));
             etSale.setText(sale + "");
             ivAdd.setImageDrawable(Drawable.createFromStream(stream, "img"));
         }
@@ -311,7 +310,7 @@ public class ParticularActivity extends AppCompatActivity implements LoaderManag
         etPrice.setText(R.string.nothing);
         etSale.setText(R.string.nothing);
         ivAdd.setImageResource(R.drawable.ic_add_shopping_cart_black_48dp);
-        
+
     }
 
 
@@ -332,12 +331,18 @@ public class ParticularActivity extends AppCompatActivity implements LoaderManag
         switch (view.getId()) {
             case R.id.bt_subtract:
                 String saleStrSubtract = etSale.getText().toString().trim();
+                if (TextUtils.isEmpty(saleStrSubtract)) {
+                    saleStrSubtract = "0";
+                }
                 int saleIntSubtract = Integer.parseInt(saleStrSubtract);
                 saleIntSubtract--;
                 etSale.setText(saleIntSubtract + "");
                 break;
             case R.id.bt_add:
                 String saleStrAdd = etSale.getText().toString().trim();
+                if (TextUtils.isEmpty(saleStrAdd)) {
+                    saleStrAdd = "0";
+                }
                 int saleIntAdd = Integer.parseInt(saleStrAdd);
                 saleIntAdd++;
                 etSale.setText(saleIntAdd + "");

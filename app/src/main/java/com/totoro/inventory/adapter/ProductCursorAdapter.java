@@ -37,21 +37,25 @@ public class ProductCursorAdapter extends CursorAdapter {
         TextView priceTV = (TextView) view.findViewById(R.id.tv_item_price);
         TextView saleTV = (TextView) view.findViewById(R.id.tv_item_sale);
         Button itemBT = (Button) view.findViewById(R.id.bt_item);
+        
         int idIndex = cursor.getColumnIndex(ProductContract.ProductEntry._ID);
         int nameIndex = cursor.getColumnIndex(ProductContract.ProductEntry.COLUMN_PRODUCT_NAME);
         int amountIndex = cursor.getColumnIndex(ProductContract.ProductEntry.COLUMN_PRODUCT_AMOUNT);
         int priceIndex = cursor.getColumnIndex(ProductContract.ProductEntry.COLUME_PRODUCT_PRICE);
         int saleIndex = cursor.getColumnIndex(ProductContract.ProductEntry.COLUMN_PRODUCT_SALE);
+        
         String id = cursor.getString(idIndex);
         String name = cursor.getString(nameIndex);
         final String amount = cursor.getString(amountIndex);
         String price = cursor.getString(priceIndex);
         final String sale = cursor.getString(saleIndex);
         final long idLong = Long.parseLong(id);
+        
         nameTV.setText(name + " ");
         amountTV.setText(amount + " ");
         priceTV.setText(price + " ");
         saleTV.setText(sale + " ");
+        
         itemBT.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
