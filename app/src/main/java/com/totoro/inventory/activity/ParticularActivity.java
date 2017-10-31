@@ -311,6 +311,7 @@ public class ParticularActivity extends AppCompatActivity implements LoaderManag
         etPrice.setText(R.string.nothing);
         etSale.setText(R.string.nothing);
         ivAdd.setImageResource(R.drawable.ic_add_shopping_cart_black_48dp);
+        
     }
 
 
